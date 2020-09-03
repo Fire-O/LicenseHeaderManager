@@ -72,6 +72,18 @@ namespace LicenseHeaderManager.Headers
                                                       documentHeader => documentHeader.FileInfo != null,
                                                       documentHeader => documentHeader.FileInfo.CreationTime.ToShortTimeString()),
                                                   new DocumentHeaderProperty (
+                                                      "%CreationHour%",
+                                                      documentHeader => documentHeader.FileInfo != null,
+                                                      documentHeader => documentHeader.FileInfo.CreationTime.Hour.ToString()),
+                                                  new DocumentHeaderProperty (
+                                                      "%CreationMinute%",
+                                                      documentHeader => documentHeader.FileInfo != null,
+                                                      documentHeader => documentHeader.FileInfo.CreationTime.Minute.ToString()),
+                                                  new DocumentHeaderProperty (
+                                                      "%CreationSecond%",
+                                                      documentHeader => documentHeader.FileInfo != null,
+                                                      documentHeader => documentHeader.FileInfo.CreationTime.Second.ToString()),
+                                                  new DocumentHeaderProperty (
                                                       "%CurrentYear%",
                                                       documentHeader => true,
                                                       documentHeader => DateTime.Now.Year.ToString()),
@@ -87,6 +99,18 @@ namespace LicenseHeaderManager.Headers
                                                       "%CurrentTime%",
                                                       documentHeader => true,
                                                       documentHeader => DateTime.Now.ToShortTimeString()),
+                                                  new DocumentHeaderProperty (
+                                                      "%CurrentHour%",
+                                                      documentHeader => true,
+                                                      documentHeader => DateTime.Now.Hour.ToString()),
+                                                  new DocumentHeaderProperty (
+                                                      "%CurrentMinute%",
+                                                      documentHeader => true,
+                                                      documentHeader => DateTime.Now.Minute.ToString()),
+                                                  new DocumentHeaderProperty (
+                                                      "%CurrentSecond%",
+                                                      documentHeader => true,
+                                                      documentHeader => DateTime.Now.Second.ToString()),
                                                   new DocumentHeaderProperty (
                                                       "%UserName%",
                                                       documentHeader => UserInfo.Name != null,
